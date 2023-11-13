@@ -26,6 +26,20 @@ def test_subtrahieren():
     ergebnis = subtrahieren(3, 1)
     assert ergebnis == 2
 
+
+def test_subtrahieren_characters():
+    with pytest.raises(TypeError) as err:
+        subtrahieren("a", 7)
+
+def test_multiplizieren_characters():
+    with pytest.raises(TypeError) as err:
+        multiplizieren("b", "C")
+
+
+def test_dividieren_characters():
+    with pytest.raises(TypeError) as err:
+        dividieren("m", "123")
+
 def test_multiplizieren_success():
     ergebnis = multiplizieren(23, 3)
     assert ergebnis == 69
